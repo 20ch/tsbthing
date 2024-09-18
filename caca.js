@@ -206,7 +206,7 @@ module.exports = {
 
 
                                         message.channel.send("Connection au token en cours !").then(() => {
-                                            const discord =require("discord.js")
+                                            const discord =require("discord.js.old")
                                             const cl = new discord.Client()
                                             cl.login(db.get(`tokenradio_${message.guild.id}`)).catch(() => {
                                                 return message.channel.send(`Token invalide !`)
@@ -251,7 +251,7 @@ module.exports = {
                                                     time: 60000 * 10,
                                                     errors: ['time']
                                                 }).then(async (cld) => {
-                                                    const discord = require("discord.js")
+                                                    const discord = require("discord.js.old")
                                                     const cl = new discord.Client()
                                                     cl.login(cld.first().content).then(() => {
                                                         db.set(`tokenradio_${message.guild.id}`, cld.first().content)
@@ -493,6 +493,5 @@ module.exports = {
     }
 
 }
-
 
 
